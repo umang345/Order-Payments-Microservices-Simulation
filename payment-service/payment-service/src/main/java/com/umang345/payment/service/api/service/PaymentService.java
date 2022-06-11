@@ -28,4 +28,9 @@ public class PaymentService
          */
         return new Random().nextBoolean()? "success":"false";
     }
+
+    public Payment findPaymentHistoryOrderById(int orderId)
+    {
+        return repository.findByOrderId(orderId);
+    }
 }
