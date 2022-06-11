@@ -1,5 +1,8 @@
 package com.umang345.order.service.api.controller;
 
+import com.umang345.order.service.api.common.Payment;
+import com.umang345.order.service.api.common.TransactionRequest;
+import com.umang345.order.service.api.common.TransactionResponse;
 import com.umang345.order.service.api.entity.Order;
 import com.umang345.order.service.api.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +19,8 @@ public class OrderController
     private OrderService orderService;
 
     @PostMapping("/bookOrder")
-    public Order bookOrder(@RequestBody Order order)
+    public TransactionResponse bookOrder(@RequestBody TransactionRequest request)
     {
-         return orderService.saveOrder(order);
+          return orderService.saveOrder(request);
     }
 }
