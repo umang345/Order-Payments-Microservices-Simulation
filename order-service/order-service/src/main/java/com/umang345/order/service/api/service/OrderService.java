@@ -26,7 +26,7 @@ public class OrderService
         payment.setAmount(order.getPrice()*order.getQty());
 
         Payment paymentResponse =
-                restTemplate.postForObject("http://localhost:9191/payment/doPayment",payment,Payment.class);
+                restTemplate.postForObject("http://PAYMENT-SERVICE/payment/doPayment",payment,Payment.class);
 
         String response = "";
 
